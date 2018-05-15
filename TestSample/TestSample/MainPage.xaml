@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestSample"
+             xmlns:controls="clr-namespace:TestSample.Controls"
+             x:Class="TestSample.MainPage">
+
+    <StackLayout>
+        <Button Text="Generate Data" Clicked="Button_Clicked"/>
+
+        <ListView Grid.Row="1" HorizontalOptions="Center" ItemsSource="{Binding Collection}" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <Label Text="{Binding}"/>
+                            <Label Text=" - "/>
+                            <controls:MagicBox Text="{Binding}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
